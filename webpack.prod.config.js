@@ -8,7 +8,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, 'build'),
-    publicPath: '/',
+    publicPath: '/world-map-choropleth/',
     filename: '[name].[chunkhash:8].js',
     chunkFilename: '[name].[chunkhash:8].chunk.js',
   },
