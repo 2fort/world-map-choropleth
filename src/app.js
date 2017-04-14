@@ -2,6 +2,8 @@ import * as d3 from 'd3';
 import { geoKavrayskiy7 } from 'd3-geo-projection';
 import { interpolateOranges } from 'd3-scale-chromatic';
 
+const prefix = process.env.NODE_ENV === 'production' ? '/world-map-choropleth' : '';
+
 const margin = { top: 10, left: 10, bottom: 10, right: 10 };
 const mapRatio = 0.5;
 let width = parseInt(d3.select('#d3').style('width'), 10) - margin.left - margin.right;
@@ -97,6 +99,6 @@ function resize() {
 d3.select(window).on('resize', resize);
 
 d3.queue()
-  .defer(d3.json, '/data/worldmap/ne_50m_admin_0_countries-topojson.json')
-  .defer(d3.json, '/data/data.json')
+  .defer(d3.json, `${prefix}/data/worldmap/ne_50m_admin_0_countries-topojson.json`)
+  .defer(d3.json, `${prefix}/data/data.json`)
   .await(ready);
