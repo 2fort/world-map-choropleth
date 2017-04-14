@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>World Map (choropleth)</title>
+    <meta name="viewport" content="initial-scale=1.0,width=device-width">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <style>
+      #d3 {
+        height: auto;
+        margin: 2rem 0;
+      }
+      .footer {
+        padding: 1.5rem 0 2rem;
+      }
+      .ocean {
+        background-color: #c3d3e8;
+        padding: 0;
+        border: 1px solid black;
+      }
+      path:hover {
+        fill: #72716c;
+      }
+      #tooltip {
+        position: absolute;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        background-color: white;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        pointer-events: none;
+        z-index: 3;
+      }
+      #tooltip.hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tooltip" class="hidden">
+      <div>
+        <strong>
+          <span id="country">0</span>:
+        </strong> <br>
+        <span id="dtime">0</span>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-inverse bg-inverse">
+      <span class="navbar-brand align-self-center" href="/">World Map (choropleth)</span>
+    </nav>
+    <div class="container-fluid">
+      <div id="d3" class="ocean"></div>
+    </div>
+    <div class="bg-inverse text-white footer">
+      <div class="container">
+        Source code: <a class="text-info" href="https://github.com/2fort">github.com/2fort</a>
+      </div>
+    </div>
+    
+  <script type="text/javascript" src="/main.547d5e67.js"></script></body>
+</html>
